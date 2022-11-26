@@ -44,7 +44,7 @@ module.exports = async (client) => {
     }
   })();
   client.user.setPresence({
-    activities: [{ name: `${process.env.STATUSBOT}` }],
+    activities: [{ name: `${process.env.BOTSTATUS}` }],
     status: `${process.env.DISCORDSTATUS}`,
   });
 };
