@@ -14,7 +14,7 @@ module.exports = {
           { name: 'Winter Mütze', value: 'santahat' },
           { name: 'Schnee', value: 'snowoverlay' },
           { name: 'Adventskranz', value: 'adventoverlay' },
-          { name: 'Yuzu', value: 'yuzuoverlay' },
+          { name: 'Weihnachtslichter', value: 'weihnachtslichter' },
         )),
 
   async execute(interaction, client) {
@@ -44,11 +44,10 @@ module.exports = {
         link = 'https://cdn.discordapp.com/attachments/981648706203955230/1046076551860584488/adventoverlay.png';
         context.drawImage(avatar, 0, 0, canvas.width, canvas.height);
         break;
-      case 'yuzuoverlay':
-          link = 'https://cdn.discordapp.com/attachments/981648706203955230/1046150967336370236/yuzuoverlay.png';
-          context.drawImage(avatar, 263, 145, 495, 495);
-          
-      break;
+      case 'weihnachtslichter':
+        link = 'https://cdn.discordapp.com/attachments/981648706203955230/1046487591182147605/weihnachtslichter.png';
+        context.drawImage(avatar, 0, 0, canvas.width, canvas.height);
+        break;
       }
 
     const hat = await Canvas.loadImage(link);
