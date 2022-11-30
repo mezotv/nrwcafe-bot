@@ -7,8 +7,12 @@ console.clear();
 const client = new Client({
     intents: [
       GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildVoiceStates,
     ],
 });
+
+  
+
 
 const boilerplateComponents = async () => {
   await require('./util/boilerplateClient')(client);

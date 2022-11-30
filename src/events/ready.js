@@ -4,7 +4,30 @@ const { readdirSync } = require("fs");
 require("dotenv").config();
 const { ChalkAdvanced } = require("chalk-advanced");
 
+const { joinVoiceChannel } = require('@discordjs/voice');
+
+
+
+
 module.exports = async (client) => {
+
+ async function voiceJoin() {
+    const guild = client.guilds.cache.get(process.env.GUILD_ID);
+
+    await  joinVoiceChannel({
+      channelId: '1047529017898709072',
+      guildId: '971897377776615494',
+      adapterCreator: guild.voiceAdapterCreator,
+      selfDeaf: false,
+      selfMute: false
+    })
+  }
+setInterval(() => {
+  voiceJoin()
+}, 7200000);
+
+voiceJoin()
+
   const commandFiles = readdirSync("./src/commands/").filter((file) =>
     file.endsWith(".js")
   );
@@ -47,4 +70,5 @@ module.exports = async (client) => {
     activities: [{ name: `${process.env.BOTSTATUS}` }],
     status: `${process.env.DISCORDSTATUS}`,
   });
+
 };
